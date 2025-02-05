@@ -2,11 +2,14 @@
 Calculadora criada como aplicação de terminal criada em linguagem C.
 
 
-<details>
-<summary>Técnologias utilizadas</summary>
-- C
-- API Windows
-</details>
+
+### Tecnologias utilizadas
+~~~ C
+~~~
+
+~~~ API Windows
+~~~
+
 
 
 ### Objetivo
