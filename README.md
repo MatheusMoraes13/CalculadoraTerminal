@@ -4,10 +4,14 @@ Calculadora criada como aplicação de terminal criada em linguagem C.
 
 
 ### Tecnologias utilizadas
-~~~ C
+~~~C
+Linguagem utilizada para criar a lógica e a estrutura da calculadora
 ~~~
 
-~~~ API Windows
+~~~API do Windows
+Utilizada para realiar a troca das cores do texto apresentando
+utilizando a função:
+SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 ~~~
 
 
