@@ -2,16 +2,15 @@
 Calculadora criada como aplicação de terminal criada em linguagem C.
 
 <details>
-<summary>Funções presentes na calculadora</summary>
+<summary>Técnologias utilizadas</summary>
 
-### Técnologias utilizadas
-
-<main>
 O foco principal do projeto é a criação de um menu interativo com controle através das "setas" do teclado
 e a tecla "enter", além de apresentar, de forma destacada, a opção que está sendo selecionada.
 
+
+
 <details>
-<summary>Funções presentes na calculadora</summary>
+<summary>### Funções presentes na calculadora
 
 - Soma
 - Subtração
@@ -19,3 +18,5 @@ e a tecla "enter", além de apresentar, de forma destacada, a opção que está 
 - Divisão
 - Potência
 - Equação do segundo grau
+
+</summary>
