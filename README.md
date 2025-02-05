@@ -14,7 +14,7 @@ e a tecla "enter", além de apresentar, de forma destacada, a opção que está 
 
 <details>
 <summary>
-### Funções presentes na calculadora
+Funções presentes na calculadora
 </summary>
 
 - Soma
