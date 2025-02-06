@@ -1,4 +1,4 @@
-//bibliotecas
+//Bibliotecas
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -7,9 +7,9 @@
 #include <windows.h>
 #include <conio.h>
 
-//funções que serão utilizadas no metodo main
+//funcoes que serao utilizadas no metodo main
 
-//Definindo os valores da teclas que serão utilizadas para controle do menu
+//Definindo os valores da teclas que serao utilizadas para controle do menu
 #define KEY_UP 72
 #define KEY_DOWN 80
 #define KEY_ESC 27
@@ -26,20 +26,20 @@ struct Keyboard {
 //redefinindo a struct para "Keyboard
 typedef struct Keyboard Keyboard;
 
-//Função para a apresentação do menu e destacar a opção selecionada
+//Funcao imprime o menun com a opcao destacada
 void menu (int opcao)
 {
 	system ("cls");
 
 	char *opcoes [] = {
-		"\tOPÇÕES\n",
+		"\tOPCOES\n",
         "\n( 1 ) - SOMAR",
         "\n( 2 ) - SUBTRAIR",
         "\n( 3 ) - MULTIPLICAR",
         "\n( 4 ) - DIVIDIR",
         "\n( 5 ) - RAIZ QUADRADA",
         "\n( 6 ) - POTENCIA",
-        "\n( 7 ) - EQUAÇÃO DO SEGUNDO GRAU"
+        "\n( 7 ) - EQUACAO DO SEGUNDO GRAU"
 	};
 
 
@@ -89,69 +89,20 @@ int Teclado (int entrada,int saida)
 }
 
 
-//função responsável por ler o teclado e retornar o valor no qual de qual opção está selecionada
+//Funcao responsavel por ler o teclado e retornar o valor no qual a opÃ¯Â¿Â½Ã¯Â¿Â½o estÃ¯Â¿Â½
 int MenuCalculadora (){
 	Keyboard teclado;
 
 	teclado.saida = 1;
 
 
-    while (teclado.saida > 0){
+    while (teclado.saida >= 0){
 
 		if (teclado.saida <= 1){
     		teclado.saida = 1;
 		}
 
-		if (teclado.saida == 1){
-			
-			menu (teclado.saida);
-			teclado.entrada = getch();
-			teclado.saida = Teclado (teclado.entrada, teclado.saida);
-			
-    	}
-
-    	if (teclado.saida == 2){
-			
-			menu (teclado.saida);
-			teclado.entrada = getch();
-			teclado.saida = Teclado (teclado.entrada, teclado.saida);
-			
-    	}
-
-    	if (teclado.saida == 3){
-			
-			menu (teclado.saida);
-			teclado.entrada = getch();
-			teclado.saida = Teclado (teclado.entrada, teclado.saida);
-			
-    	}
-
-    	if (teclado.saida == 4){
-			
-			menu (teclado.saida);
-			teclado.entrada = getch();
-			teclado.saida = Teclado (teclado.entrada, teclado.saida);
-			
-    	}
-
-
-    	if (teclado.saida == 5){
-			
-			menu (teclado.saida);
-			teclado.entrada = getch();
-			teclado.saida = Teclado (teclado.entrada, teclado.saida);
-			
-    	}
-
-    	if (teclado.saida == 6){
-			
-			menu (teclado.saida);
-			teclado.entrada = getch();
-			teclado.saida = Teclado (teclado.entrada, teclado.saida);
-			
-    	}
-
-    	if (teclado.saida == 7){
+		if (teclado.saida <= 7 && teclado.saida >= 1){
 			
 			menu (teclado.saida);
 			teclado.entrada = getch();
@@ -169,7 +120,7 @@ int MenuCalculadora (){
 
 
 
-//limpa o terminal e continua o código
+//limpa o terminal e continua o codigo
 void continua (){
 
 	printf ("\n\n\n\tPRESSIONE QUALQUER TECLA PARA CONTINUAR");
@@ -177,16 +128,16 @@ void continua (){
 	system ("cls || clear");
 }
 
-//declara as variáveis gerais para as operações
+//declara as variaveis gerais para as operacoes
 float ans, n1, n2;
 
 
-//realiza a operação de soma
+//realiza a operacao de soma
 float soma (){
 
-	printf ("\nInsira o primeiro número: ");
+	printf ("\nInsira o primeiro numero: ");
 	scanf ("%f", &n1);
-	printf ("\nInsira o segundo número: ");
+	printf ("\nInsira o segundo numero: ");
 	scanf ("%f", &n2);
 
 	ans = n1 + n2;
@@ -197,12 +148,12 @@ float soma (){
 return ans;
 }
 
-//realiza a operação de subtração
+//realiza a ooperacao de subtracao
 float subtracao (){
 
-	printf ("\nInsira o primeiro número: ");
+	printf ("\nInsira o primeiro numero: ");
 	scanf ("%f", &n1);
-	printf ("\nInsira o segunso número: ");
+	printf ("\nInsira o segunso nÃ¯Â¿Â½mero: ");
 	scanf ("%f", &n2);
 
 	ans = n1 - n2;
@@ -213,12 +164,12 @@ float subtracao (){
 return ans;
 }
 
-//realiza a operação de multiplicação
+//realiza a opreacao de multiplicaco
 float multiplicacao (){
 
-	printf ("\nInsira o primeiro número: ");
+	printf ("\nInsira o primeiro numero: ");
 	scanf ("%f", &n1);
-	printf ("\nInsira o segunso número: ");
+	printf ("\nInsira o segunso numero: ");
 	scanf ("%f", &n2);
 
 	ans = n1 * n2;
@@ -229,12 +180,12 @@ float multiplicacao (){
 return ans;
 }
 
-//realiza a operação de divisão
+//realiza a operacao de divisao
 float divisao (){
 
-	printf ("\nInsira o primeiro número: ");
+	printf ("\nInsira o primeiro numero: ");
 	scanf ("%f", &n1);
-	printf ("\nInsira o segunso número: ");
+	printf ("\nInsira o segunso numero: ");
 	scanf ("%f", &n2);
 
 	ans = n1 / n2;
@@ -245,10 +196,10 @@ float divisao (){
 return ans;
 }
 
-//realiza a operação de raiz quadrada
+//realiza a operacao de raiz quadrada
 float raiz (){
 
-	printf ("Insira o número o qual deseja a raiz quadrada: ");
+	printf ("Insira o numero o qual deseja a raiz quadrada: ");
 	scanf ("%f", &n1);
 
 	ans = sqrt(n1);
@@ -259,7 +210,7 @@ float raiz (){
 	return ans;
 }
 
-//realiza a operação exponencial
+//realiza a operacao exponencial
 float potencia (){
 
 	printf ("\nInsira o valor da base:");
@@ -282,17 +233,17 @@ float potencia (){
 	return ans;
 }
 
-//realiza a operação de segundo grau
+//realiza a operacao de equacao do segundo grau
 void segundograu (){
 	float a,b, c, xl, xll, delt;
 
-	printf("\ninsira o elemento ""A"" da equação: ");
+	printf("\ninsira o elemento ""A"" da equacao: ");
 	scanf("%f", &a);
 
-	printf("\ninsira o elemento ""B"" da equação: ");
+	printf("\ninsira o elemento ""B"" da equacao: ");
 	scanf("%f", &b);
 
-	printf("\ninsira o elemento ""C"" da equação: ");
+	printf("\ninsira o elemento ""C"" da equacao: ");
 	scanf("%f", &c);
 
 	delt = (b*b) - (4*a*c);
@@ -309,7 +260,7 @@ void segundograu (){
 
 }
 
-//função responsável por executar a opção selecionada pelo usuário
+//funcao que sera responsavel por executar a opcao selecionada pelo usuario
 void opcoes (int choice){
 
 
@@ -374,15 +325,10 @@ void opcoes (int choice){
 int main(){
 setlocale(LC_ALL, "Portuguese");
 
-//imprimir o menu inicial para o usuário
-    int option = 0;
 
     printf("\t CALCULADORA\n\n");
-    
-	option = MenuCalculadora ();
+    MenuCalculadora ();
 
-//chama a função responsável por executar a opção selecionada pelo usuário
-    opcoes(option);
 
 return 0;
 }
