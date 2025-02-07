@@ -17,108 +17,14 @@
 #define OPTmax 3
 #define OPTmin 1
 
+//declara as variaveis gerais para as operacoes
+float ans, n1, n2;
+
 //Definindo uma estrutura para controle de entrada e saida do teclado
 struct Keyboard {
 	int entrada;
 	int saida;
 };
-
-//redefinindo a struct para "Keyboard
-typedef struct Keyboard Keyboard;
-
-//Funcao imprime o menun com a opcao destacada
-void menu (int opcao)
-{
-	system ("cls");
-
-	char *opcoes [] = {
-		"\tOPCOES\n",
-        "\n( 1 ) - SOMAR",
-        "\n( 2 ) - SUBTRAIR",
-        "\n( 3 ) - MULTIPLICAR",
-        "\n( 4 ) - DIVIDIR",
-        "\n( 5 ) - RAIZ QUADRADA",
-        "\n( 6 ) - POTENCIA",
-        "\n( 7 ) - EQUACAO DO SEGUNDO GRAU"
-	};
-
-
-		int i;
-        for (i = 0; i < 8; i++)
-        {
-            if (i == opcao)
-            {
-                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
-                printf ("%s", opcoes [i]);
-                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-            }
-
-            else
-            {
-                printf("%s", opcoes [i]);
-            }
-        }
-
-	printf("\n\n( \"ESC\" )   SAIR");
-
-}
-
-int Teclado (int entrada,int saida)
-{
-	if (entrada == KEY_ENTER){
-				system("cls");
-				opcoes (saida);
-			return saida;
-			}
-
-	if (entrada == KEY_ESC){
-        printf("\n\nENCERRANDO O PROGRAMA");
-        getch();
-    	return 0;
-    	}
-
-	if (entrada == KEY_DOWN){
-    	saida ++;
-		}
-
-	if (entrada == KEY_UP){
-		saida --;
-		}
-		
-	return saida;
-}
-
-
-//Funcao responsavel por ler o teclado e retornar o valor no qual a opï¿½ï¿½o estï¿½
-int MenuCalculadora (){
-	Keyboard teclado;
-
-	teclado.saida = 1;
-
-
-    while (teclado.saida >= 0){
-
-		if (teclado.saida <= 1){
-    		teclado.saida = 1;
-		}
-
-		if (teclado.saida <= 7 && teclado.saida >= 1){
-			
-			menu (teclado.saida);
-			teclado.entrada = getch();
-			teclado.saida = Teclado (teclado.entrada, teclado.saida);
-			
-    	}
-
-    	if (teclado.saida > 7){
-    		teclado.saida = 7;
-		}
-
-
-    }
-}
-
-
 
 //limpa o terminal e continua o codigo
 void continua (){
@@ -127,10 +33,6 @@ void continua (){
 	getch ();
 	system ("cls || clear");
 }
-
-//declara as variaveis gerais para as operacoes
-float ans, n1, n2;
-
 
 //realiza a operacao de soma
 float soma (){
@@ -319,6 +221,103 @@ void opcoes (int choice){
 
 
 }
+
+
+//redefinindo a struct para "Keyboard
+typedef struct Keyboard Keyboard;
+
+//Funcao imprime o menun com a opcao destacada
+void menu (int opcao)
+{
+	system ("cls");
+
+	char *opcoes [] = {
+		"\tOPCOES\n",
+        "\n( 1 ) - SOMAR",
+        "\n( 2 ) - SUBTRAIR",
+        "\n( 3 ) - MULTIPLICAR",
+        "\n( 4 ) - DIVIDIR",
+        "\n( 5 ) - RAIZ QUADRADA",
+        "\n( 6 ) - POTENCIA",
+        "\n( 7 ) - EQUACAO DO SEGUNDO GRAU"
+	};
+
+
+		int i;
+        for (i = 0; i < 8; i++)
+        {
+            if (i == opcao)
+            {
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 240);
+                printf ("%s", opcoes [i]);
+                SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+            }
+
+            else
+            {
+                printf("%s", opcoes [i]);
+            }
+        }
+
+	printf("\n\n( \"ESC\" )   SAIR");
+
+}
+
+int Teclado (int entrada,int saida)
+{
+	if (entrada == KEY_ENTER){
+				system("cls");
+				opcoes (saida);
+			return saida;
+			}
+
+	if (entrada == KEY_ESC){
+        printf("\n\nENCERRANDO O PROGRAMA");
+        getch();
+    	return 0;
+    	}
+
+	if (entrada == KEY_DOWN){
+    	saida ++;
+		}
+
+	if (entrada == KEY_UP){
+		saida --;
+		}
+		
+	return saida;
+}
+
+
+//Funcao responsavel por ler o teclado e retornar o valor no qual a opï¿½ï¿½o estï¿½
+void MenuCalculadora (){
+	Keyboard teclado;
+
+	teclado.saida = 1;
+
+
+    while (teclado.saida >= 0){
+
+		if (teclado.saida < 1){
+    		teclado.saida = 1;
+		}
+
+		if (teclado.saida <= 7 && teclado.saida >= 1){
+			
+			menu (teclado.saida);
+			teclado.entrada = getch();
+			teclado.saida = Teclado (teclado.entrada, teclado.saida);
+			
+    	}
+
+    	if (teclado.saida > 7){
+    		teclado.saida = 7;
+		}
+
+
+    }
+}
+
 
 
 //metodo main da calculadora
